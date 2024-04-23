@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useSearchMovieQuery } from "../../hooks/useSearchMovie";
-import { useSearchParams } from "react-router-dom";
-import ClipLoader from "react-spinners/ClipLoader";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import { Alert, Container, Row, Col, Tab, Nav, Button } from "react-bootstrap";
 import { useMovieGenreQuery } from "../../hooks/useMovieGenre";
 import { useGenreMovieQuery } from "../../hooks/useGenreMovie";
@@ -9,7 +8,6 @@ import RenderMovieList from "./components/RenderMovieList/RenderMovieList";
 import RenderGenreList from "./components/RenderGenreList/RenderGenreList";
 import RenderSortList from "./components/RenderSortList/RenderSortList";
 import "./MoviePage.style.css";
-import ExceptionHandling from "../../common/ExceptionHandling/ExceptionHandling";
 
 // 경로 2가지
 // nav바에서 클릭해서 온 경우 => popularMovie 보여주기
@@ -37,6 +35,9 @@ import ExceptionHandling from "../../common/ExceptionHandling/ExceptionHandling"
 const Moviepage = () => {
   const [query, setQuery] = useSearchParams();
   const keyword = query.get("q");
+  console.log("keyword", keyword);
+
+  const navigate = useNavigate();
 
   const [selectedTabList, setSelectedTabList] = useState([28]);
   console.log("selectedTabList", selectedTabList);
@@ -91,7 +92,9 @@ const Moviepage = () => {
                   />
                 </div>
               ) : (
-                <Button href="/movies">Do you want filtering?</Button>
+                <Button onClick={() => navigate("/movies")}>
+                  Do you want filtering?
+                </Button>
               )}
             </Nav>
           </Col>
