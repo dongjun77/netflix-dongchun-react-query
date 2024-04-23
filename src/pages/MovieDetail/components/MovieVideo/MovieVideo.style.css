@@ -1,0 +1,11 @@
+.video-icon {
+  color: rgba(255, 0, 0, 0.8);
+}
+
+.video-icon:hover {
+  cursor: pointer;
+}
+
+.modal-custom {
+  color: black;
+}

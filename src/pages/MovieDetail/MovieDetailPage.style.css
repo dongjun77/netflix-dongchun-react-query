@@ -1,0 +1,46 @@
+.movie-detail-page {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.movie-detail {
+  width: 60vh;
+  height: 100vh;
+  background-size: cover;
+  object-fit: cover;
+  margin-top: 3rem;
+}
+
+.movie-detail-info {
+  margin-left: 50px;
+}
+@media (max-width: 991px) {
+  .movie-detail-info {
+    margin-left: 0px;
+  }
+}
+.genre-area {
+  display: flex;
+  justify-content: left;
+}
+
+h4 {
+  color: lightgray;
+}
+
+.card-info {
+  padding-bottom: 20px;
+  border-bottom: 2px solid white;
+}
+
+.card-info-additional {
+  border-top: 2px solid white;
+  padding: 20px;
+  border-bottom: 2px solid white;
+}
+
+.review_item {
+  padding: 20px;
+  border: 2px solid white;
+}
